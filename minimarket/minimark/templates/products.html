@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <title>Prductos</title>
+</head>
+
+<body class="m-15"
+    style="background-image: url('{% static 'images/gradiente.png' %}'); background-size: cover; background-repeat: no-repeat;">
+    <header class="w-full flex flex-row items-center">
+        <div class="w-50 rounded-md">
+            <img src="{% static 'images/logo.jpeg' %}" alt="Logo" class="w-100 h-[3.5rem] rounded-md">
+        </div>
+        <h1 class="text-6xl font-bold flex flex-1 justify-center uppercase text-bold" style="font-family: Kodchasan;">
+            {{ title }}
+        </h1>
+    </header>
+
+    <main class="w-full flex flex-row mt-[5rem] gap-[10rem]">
+        <article class="w-1/4 p-11 bg-[#344C2A] rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold text-center text-white uppercase mb-5" style="font-family: Kodchasan;">
+                Bienvenido</h2>
+            <div
+                class="rounded-full w-[7rem] h-[7rem] overflow-hidden bg-white flex justify-center items-center m-auto">
+                <img src="{% static 'images/user.png' %}" alt="">
+            </div>
+            <p class=" text-white text-center font-light mt-5" style="font-family: Kodchasan;">Colaborador {{ user }}
+            </p>
+            <div class="flex flex-col gap-5 mt-11 ms-[4rem]">
+                <a href="{% url 'index' %}" class="text-white text-2xl hover:underline transition-all"
+                    style="font-family: Kodchasan;">. Dashboard</a>
+                <a href="{% url 'products' %}" class="text-white text-2xl {{ active }} transition-all"
+                    style="font-family: Kodchasan;">.
+                    Productos</a>
+                <a href="{% url 'chat' %}" class="text-white text-2xl hover:underline transition-all" style="font-family: Kodchasan;">.
+                    IA chat</a>
+                <a href="#" class="text-white text-2xl hover:underline transition-all" style="font-family: Kodchasan;">.
+                    Serrar sesion</a>
+            </div>
+        </article>
+
+
+        <section class="w-3/4 flex flex-col">
+            <table class=" w-full text-center shadow-lg bg-white rounded-lg">
+                <thead class="border-b border-[#344C2A]-50">
+                    <tr>
+                        <th class="font-medium text-lg p-4" style="font-family: Kodchasan;">ID</th>
+                        <th class="font-medium text-lg bg-emerald-800/20" style="font-family: Kodchasan;">Producto</th>
+                        <th class="font-medium text-lg" style="font-family: Kodchasan;">Cantidad</th>
+                        <th class="font-medium text-lg bg-emerald-800/20" style="font-family: Kodchasan;">Precio</th>
+                        <th class="font-medium text-lg" style="font-family: Kodchasan;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="border-b">
+                    {% for product in products %}
+                    <tr class="border-b">
+                        <td class="font-semibold text-md p-5">#{{ product.id }}</td>
+                        <td class="font-semibold text-md bg-emerald-800/20">{{ product.product }}</td>
+                        <td class="font-semibold text-md">{{ product.amount }}</td>
+                        <td class="font-semibold text-md bg-emerald-800/20">S/ {{ product.price }} / uni</td>
+                        <td>
+                            <a href="#"><i class="ph ph-pencil-simple-line"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>

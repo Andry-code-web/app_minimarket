@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <title>Home</title>
+</head>
+
+<body class="m-15"
+    style="background-image: url('{% static 'images/gradiente.png' %}'); background-size: cover; background-repeat: no-repeat;">
+
+    <header class="w-full flex flex-row items-center">
+        <div class="w-50 rounded-md">
+            <img src="{% static 'images/logo.jpeg' %}" alt="Logo" class="w-100 h-[3.5rem] rounded-md">
+        </div>
+        <h1 class="text-6xl font-bold flex flex-1 justify-center uppercase text-bold" style="font-family: Kodchasan;">
+            {{ title }}
+        </h1>
+    </header>
+
+    <main class="w-full flex flex-row mt-[5rem] gap-[10rem]">
+
+        <article class="w-1/4 p-11 bg-[#344C2A] rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold text-center text-white uppercase mb-5" style="font-family: Kodchasan;">
+                Bienvenido</h2>
+            <div
+                class="rounded-full w-[7rem] h-[7rem] overflow-hidden bg-white flex justify-center items-center m-auto">
+                <img src="{% static 'images/user.png' %}" alt="">
+            </div>
+            <p class=" text-white text-center font-light mt-5" style="font-family: Kodchasan;">Colaborador {{ user }}
+            </p>
+            <div class="flex flex-col gap-5 mt-11 ms-[4rem]">
+                <a href="{% url 'index' %}" class="text-white text-2xl {{ active }} transition-all" style="font-family: Kodchasan;" >. Dashboard</a>
+                <a href="{% url 'products' %}" class="text-white text-2xl hover:underline transition-all" style="font-family: Kodchasan;">.
+                    Productos</a>
+                <a href="{% url 'chat' %}" class="text-white text-2xl hover:underline transition-all" style="font-family: Kodchasan;">. IA chat</a>
+                <a href="#" class="text-white text-2xl hover:underline transition-all" style="font-family: Kodchasan;">. Serrar sesion</a>
+            </div>
+        </article>
+
+
+        <section class="w-3/4 flex flex-col">
+            <div class="w-full h-auto flex justify-center gap-10">
+                <div class="w-1/5 h-[5rem] bg-white rounded-md flex flex-col justify-center items-center shadow-lg">
+                    <p class="text-4xl font-bold" style="font-family: Kodchasan;">20</p>
+                    <p class="text-lg font-semibold" style="font-family: Kodchasan;">Productos</p>
+                </div>
+                <div class="w-1/5 h-[5rem] bg-white rounded-md flex flex-col justify-center items-center shadow-lg">
+                    <p class="text-4xl font-bold">10</p>
+                    <p class="text-lg font-semibold">Usuarios</p>
+                </div>
+                <div class="w-1/5 h-[5rem] bg-white rounded-md flex flex-col justify-center items-center shadow-lg">
+                    <p class="text-4xl font-bold"><span>S/</span><span>1000</span></p>
+                    <p class="text-lg font-semibold">Ingresos</p>
+                </div>
+            </div>
+
+            <div class="w-full h-auto flex gap-15 mt-15 px-7">
+                <div class="w-1/2 bg-white rounded-lg p-5 shadow-lg">
+                    <h3 class="text-xl font-semibold text-center" style="font-family: Kodchasan;">
+                        Últimos Productos
+                    </h3>
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <p class="font-light text-white text-sm" style="font-family: Kodchasan;">#1</p>
+                        <p class="font-bold text-white text-xl" style="font-family: Kodchasan;">Tomate</p>
+                        <p class="font-medium text-white text-md" style="font-family: Kodchasan;">2kg</p>
+                        <div class="flex flex-row gap-3">
+                            <i class="ph ph-eye text-lg text-white"></i>
+                            <i class="ph ph-plus-circle text-lg text-white"></i>
+                        </div>
+                    </div>
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <p class="font-light text-white text-sm" style="font-family: Kodchasan;">#1</p>
+                        <p class="font-bold text-white text-xl" style="font-family: Kodchasan;">Tomate</p>
+                        <p class="font-medium text-white text-md" style="font-family: Kodchasan;">2kg</p>
+                        <div class="flex flex-row gap-3">
+                            <i class="ph ph-eye text-lg text-white"></i>
+                            <i class="ph ph-plus-circle text-lg text-white"></i>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <p class="font-light text-white text-sm" style="font-family: Kodchasan;">#1</p>
+                        <p class="font-bold text-white text-xl" style="font-family: Kodchasan;">Tomate</p>
+                        <p class="font-medium text-white text-md" style="font-family: Kodchasan;">2kg</p>
+                        <div class="flex flex-row gap-3">
+                            <i class="ph ph-eye text-lg text-white"></i>
+                            <i class="ph ph-plus-circle text-lg text-white"></i>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <p class="font-light text-white text-sm" style="font-family: Kodchasan;">#1</p>
+                        <p class="font-bold text-white text-xl" style="font-family: Kodchasan;">Tomate</p>
+                        <p class="font-medium text-white text-md" style="font-family: Kodchasan;">2kg</p>
+                        <div class="flex flex-row gap-3">
+                            <i class="ph ph-eye text-lg text-white"></i>
+                            <i class="ph ph-plus-circle text-lg text-white"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="w-1/2 bg-white rounded-lg p-5 shadow-lg">
+                    <h3 class="text-xl font-semibold text-center">
+                        Últimos Usuarios
+                    </h3>
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <div class="flex flex-row justify-center items-center gap-3">
+                            <div class="w-[3.5rem] h-[3.5rem] overflow-hidden bg-sky-400 rounded-full">
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="font-medium text-white text-md" style="font-family: Kodchasan;">{{ user }}</p>
+                                <img src="{% static 'images/logos_google.png' %}" class="w-[2.5rem]" alt="">
+                            </div>
+                        </div>
+                        <i class="ph ph-eye text-lg text-white me-2"></i>
+                    </div>
+
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <div class="flex flex-row justify-center items-center gap-3">
+                            <div class="w-[3.5rem] h-[3.5rem] overflow-hidden bg-purple-400 rounded-full">
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="font-medium text-white text-md" style="font-family: Kodchasan;">{{ user }}</p>
+                                <img src="{% static 'images/logos_google.png' %}" class="w-[2.5rem]" alt="">
+                            </div>
+                        </div>
+                        <i class="ph ph-eye text-lg text-white me-2"></i>
+                    </div>
+
+
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <div class="flex flex-row justify-center items-center gap-3">
+                            <div class="w-[3.5rem] h-[3.5rem] overflow-hidden bg-yellow-400 rounded-full">
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="font-medium text-white text-md" style="font-family: Kodchasan;">{{ user }}</p>
+                                <img src="{% static 'images/logos_google.png' %}" class="w-[2.5rem]" alt="">
+                            </div>
+                        </div>
+                        <i class="ph ph-eye text-lg text-white me-2"></i>
+                    </div>
+
+                </div>
+
+                <div class="w-1/2 bg-white rounded-lg p-5 shadow-lg">
+                    <h3 class="text-xl font-semibold text-center">
+                        Ultimas Compras
+                    </h3>
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <p class="font-light text-white text-sm" style="font-family: Kodchasan;">#1</p>
+                        <p class="font-medium text-white text-sm" style="font-family: Kodchasan;">1/2kg</p>
+                        <p class="font-bold text-white text-xl" style="font-family: Kodchasan;">Tomate</p>
+                        <p class="font-medium text-white text-sm" style="font-family: Kodchasan;"><span>S/</span>2.00</p>
+                        <div class="flex flex-row gap-3">
+                            <i class="ph ph-eye text-lg text-white"></i>
+                        </div>
+                    </div>
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <p class="font-light text-white text-sm" style="font-family: Kodchasan;">#1</p>
+                        <p class="font-medium text-white text-sm" style="font-family: Kodchasan;">1/2kg</p>
+                        <p class="font-bold text-white text-xl" style="font-family: Kodchasan;">Tomate</p>
+                        <p class="font-medium text-white text-sm" style="font-family: Kodchasan;"><span>S/</span>2.00</p>
+                        <div class="flex flex-row gap-3">
+                            <i class="ph ph-eye text-lg text-white"></i>
+                        </div>
+                    </div>
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <p class="font-light text-white text-sm" style="font-family: Kodchasan;">#1</p>
+                        <p class="font-medium text-white text-sm" style="font-family: Kodchasan;">1/2kg</p>
+                        <p class="font-bold text-white text-xl" style="font-family: Kodchasan;">Tomate</p>
+                        <p class="font-medium text-white text-sm" style="font-family: Kodchasan;"><span>S/</span>2.00</p>
+                        <div class="flex flex-row gap-3">
+                            <i class="ph ph-eye text-lg text-white"></i>
+                        </div>
+                    </div>
+                    <div class="w-full h-auto flex justify-between items-center gap-5 bg-[#344C2A] p-3 rounded-md mt-5">
+                        <p class="font-light text-white text-sm" style="font-family: Kodchasan;">#1</p>
+                        <p class="font-medium text-white text-sm" style="font-family: Kodchasan;">1/2kg</p>
+                        <p class="font-bold text-white text-xl" style="font-family: Kodchasan;">Tomate</p>
+                        <p class="font-medium text-white text-sm" style="font-family: Kodchasan;"><span>S/</span>2.00</p>
+                        <div class="flex flex-row gap-3">
+                            <i class="ph ph-eye text-lg text-white"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
