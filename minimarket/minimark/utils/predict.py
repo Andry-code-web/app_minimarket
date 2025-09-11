@@ -51,10 +51,6 @@ def preparar_datos():
 
     return df_unidad
 
-
-# ==========================
-# Predicción para un producto
-# ==========================
 def predecir_producto(nombre_producto: str):
     df_unidad = preparar_datos()
 
@@ -100,9 +96,16 @@ def extraer_productos(mensaje, lista_productos):
 
 
 def responder_chat(mensaje):
-    lista_productos = ["tomates", "Cebolla", "Leche", "Pan", "Arroz"]
+    productos_map = {
+        "Tomatoes": "tomates",
+        "Onions": "cebollas",
+        "Milk": "Leche",
+        "Bread": "pan",
+        "Rice": "arroz"
+    }
 
-    productos_encontrados = extraer_productos(mensaje, lista_productos)
+
+    productos_encontrados = extraer_productos(mensaje, productos_map.keys())
 
     if not productos_encontrados:
         return "No entendí tu consulta 🤔. ¿Puedes especificar un producto?", []
@@ -113,9 +116,10 @@ def responder_chat(mensaje):
         if isinstance(pred, str):  # Si devolvió un mensaje de error
             continue
         resultados.append({
-            "producto": prod,
+            "producto": productos_map.get(prod, prod),
             "cantidad": int(pred)
         })
+
 
     if not resultados:
         return "No encontré datos suficientes para esos productos 📉", []
